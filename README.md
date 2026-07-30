@@ -1,2 +1,13 @@
-# Obre_La_Porta_WCity
-Obre la Porta W-City (Penedès-Garraf) es una integración para Home Assistant que consulta mediante web scraping el servicio de recogida de residuos puerta a puerta de la Mancomunitat Penedès-Garraf (plataforma W-City), indicando automáticamente qué fracción toca sacar hoy.
+# 🗑️ Obre la Porta W-City (Mancomunitat Penedès-Garraf) — Home Assistant
+
+Integración personalizada (*custom component*) para Home Assistant diseñada para consultar automáticamente el calendario de recogida de residuos puerta a puerta gestionado por la **Mancomunitat Penedès-Garraf** a través de la plataforma W-City.
+
+### 📍 Ámbito de aplicación
+Diseñado específicamente para los municipios adheridos al sistema de recogida puerta a puerta de la **Mancomunitat Penedès-Garraf** que utilizan el portal web W-City.
+
+### ✨ Características principales (v0.1.0)
+* **Scraping directo:** Obtención del estado directamente desde la plataforma W-City de la Mancomunitat.
+* **Sensor de estado:** Genera la entidad `sensor.basura_hoy` con la fracción del día (ej. *PAPEL*, *RESTO*, *ORGANICA*).
+* **Frecuencia de actualización:** Consulta automática cada 30 minutos.
+* **Configuración sencilla:** Introducción de credenciales desde el propio menú de Home Assistant (*Config Flow*).
+* **Soporte HACS:** Preparado para instalar como repositorio personalizado.
