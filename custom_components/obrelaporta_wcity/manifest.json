@@ -1,0 +1,11 @@
+{
+  "domain": "obrelaporta_wcity",
+  "name": "Obre la Porta",
+  "documentation": "https://obrelaporta.wcity.app",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": [],
+  "version": "0.0.1",
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}
