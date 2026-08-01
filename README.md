@@ -3,18 +3,7 @@
 Integración personalizada (*custom component*) para Home Assistant diseñada para consultar automáticamente el calendario de recogida de residuos puerta a puerta gestionado por la **Mancomunitat Penedès-Garraf** a través de la plataforma W-City.
 
 ### 📍 Ámbito de aplicación
-Diseñado específicamente para los municipios adheridos al sistema de recogida puerta a puerta de la **Mancomunitat Penedès-Garraf** que utilizan el portal web W-City.
-
-Municipis: 
-
-Olèrdola
-El Pla del Penedès
-La Granada
-Sant Pere de Riudebitlles
-Sant Quintí de Mediona
-Sant Sadurní d'Anoia
-Torrelavit 
-
+Diseñado específicamente para los municipios adheridos al sistema de recogida puerta a puerta de la **Mancomunitat Penedès-Garraf** (Olèrdola, El Pla del Penedès, La Granada, Sant Pere de Riudebitlles, Sant Quintí de Mediona, Sant Sadurní d'Anoia, Torrelavit) que utilizan el portal web W-City.
 
 
 ### ✨ Características principales (v0.1.0)
