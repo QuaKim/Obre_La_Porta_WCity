@@ -5,6 +5,18 @@ Integración personalizada (*custom component*) para Home Assistant diseñada pa
 ### 📍 Ámbito de aplicación
 Diseñado específicamente para los municipios adheridos al sistema de recogida puerta a puerta de la **Mancomunitat Penedès-Garraf** que utilizan el portal web W-City.
 
+Municipis: 
+
+Olèrdola
+El Pla del Penedès
+La Granada
+Sant Pere de Riudebitlles
+Sant Quintí de Mediona
+Sant Sadurní d'Anoia
+Torrelavit 
+
+
+
 ### ✨ Características principales (v0.1.0)
 * **Scraping directo:** Obtención del estado directamente desde la plataforma W-City de la Mancomunitat.
 * **Sensor de estado:** Genera la entidad `sensor.basura_hoy` con la fracción del día (ej. *PAPEL*, *RESTO*, *ORGANICA*).
