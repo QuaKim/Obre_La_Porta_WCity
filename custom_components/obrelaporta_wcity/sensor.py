@@ -1,11 +1,9 @@
 import logging
-import re
 import aiohttp
 from datetime import timedelta
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
@@ -13,8 +11,9 @@ from .const import CONF_USERNAME, CONF_PASSWORD, URL_BASE
 
 _LOGGER = logging.getLogger(__name__)
 
-# Se actualiza cada 30 minutos
 SCAN_INTERVAL = timedelta(minutes=30)
+
+TOKEN_PWA = "MWMxNDNmNTM3YjQ3NDhkNzgyY2RmYWZmODZhYmFmYmU2NGNiMGU4ZmY1MzE1MjhjYWQ2ZDExZGQ1Njg0NWRkZQ=="
 
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -24,7 +23,7 @@ async def async_setup_entry(
     username = entry.data.get(CONF_USERNAME, "")
     password = entry.data.get(CONF_PASSWORD, "")
 
-    async_add_entities([ObreLaPortaHoySensor(username, password)], True)
+    async_add_entities([ObreLaPortaHoySensor(username, password)], update_before_add=True)
 
 class ObreLaPortaHoySensor(SensorEntity):
     def __init__(self, username: str, password: str):
@@ -33,54 +32,52 @@ class ObreLaPortaHoySensor(SensorEntity):
         self._attr_name = "Basura Hoy"
         self._attr_unique_id = f"obrelaporta_basura_hoy_{username}"
         self._attr_icon = "mdi:trash-can"
-        self._state = "Cargando..."
-        self._extra_attributes = {}
-
-    @property
-    def state(self) -> str:
-        return self._state
-
-    @property
-    def extra_state_attributes(self) -> dict:
-        return self._extra_attributes
+        self._attr_native_value = "Cargando..."
+        self._attr_extra_state_attributes = {}
 
     async def async_update(self) -> None:
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/133.0.0.0",
+            "Accept": "application/json, text/javascript, */*; q=0.01",
+            "Accept-Language": "es-ES,es;q=0.9,ca;q=0.8",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-TOKEN": TOKEN_PWA,
+            "X-LANG": "ca",
+            "Content-Type": "text/plain",
+            "Referer": f"{URL_BASE}/",
         }
 
-        # Intentamos obtener la página cargando con la sesión/cookies correspondientes
+        cookies = {
+            "aWRfd2FzdGVpbmRleHBocA": "rpvc7elvhtbi3r9040l0r9ljf4"
+        }
+
+        url_sector = f"{URL_BASE}/modules/WCITY/api/v1/sector"
+
         try:
-            async with aiohttp.ClientSession(headers=headers) as session:
-                url_acceso = f"{URL_BASE}/?email={self._username}&codi_usuari={self._username}"
-                
-                async with session.get(url_acceso, timeout=15) as response:
-                    if response.status != 200:
-                        _LOGGER.error("Error conectando a Wcity (HTTP %s)", response.status)
-                        self._state = "Error Web"
-                        return
+            async with aiohttp.ClientSession(headers=headers, cookies=cookies) as session:
+                async with session.get(url_sector, timeout=15) as resp_sector:
+                    if resp_sector.status == 200:
+                        json_sector = await resp_sector.json(content_type=None)
 
-                    html = await response.text()
+                        if isinstance(json_sector, dict) and json_sector.get("result") == "OK":
+                            data = json_sector.get("data", {})
+                            recollides = data.get("recollides", [])
 
-            # Buscamos directamente la etiqueta <span id="recollida_avui">...</span>
-            match = re.search(r'id=["\']recollida_avui["\'][^>]*>(.*?)</span>', html, re.DOTALL | re.IGNORECASE)
-
-            if match:
-                texto_raw = match.group(1).strip()
-                # Limpiamos el prefijo "HOY TOCA:" o "AVUI TOCA:" para dejar solo la fracción (ej: RESTO)
-                texto_limpio = re.sub(r'^(HOY|AVUI)\s+TOCA:\s*', '', texto_raw, flags=re.IGNORECASE).strip()
-                self._state = texto_limpio.upper() if texto_limpio else "SIN INFORMACIÓN"
-            else:
-                # Si no está procesado en HTML estático, buscamos si está dentro de JS
-                match_js = re.search(r'recollida_avui["\']?\s*:\s*["\']([^"\'\n]+)["\']', html)
-                if match_js:
-                    self._state = match_js.group(1).strip().upper()
-                else:
-                    self._state = "RESTO" # Valor detectado en tu pantalla si la página carga la vista base
-
-            _LOGGER.info("Obre la Porta - Estado detectado: %s", self._state)
+                            if recollides:
+                                nombres = [item.get("desc") for item in recollides if item.get("desc")]
+                                self._attr_native_value = ", ".join(nombres) if nombres else "Ninguna"
+                                self._attr_extra_state_attributes = {
+                                    "recollides_detall": recollides,
+                                    "total_recogidas_hoy": len(recollides),
+                                }
+                            else:
+                                self._attr_native_value = "Sin recogida hoy"
+                                self._attr_extra_state_attributes = {"recollides_detall": []}
+                        else:
+                            self._attr_native_value = "Error API Sector"
+                    else:
+                        self._attr_native_value = f"Error HTTP {resp_sector.status}"
 
         except Exception as e:
-            _LOGGER.error("Error procesando la web de Wcity: %s", e)
-            self._state = "Error"
+            _LOGGER.error("Error consultando la API de Wcity: %s", e, exc_info=True)
+            self._attr_native_value = "Error de conexión"
