@@ -1,10 +1,10 @@
 {
   "domain": "obrelaporta_wcity",
   "name": "Obre la Porta W-City",
-  "codeowners": ["@tu_usuario"],
+  "codeowners": ["@QuaKim"],
   "config_flow": true,
   "documentation": "https://github.com/tu_usuario/tu_repositorio",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/tu_usuario/tu_repositorio/issues",
-  "version": "0.1.2"
+  "version": "0.1.0"
 }
