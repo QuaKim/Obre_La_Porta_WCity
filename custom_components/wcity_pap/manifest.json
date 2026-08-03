@@ -3,10 +3,10 @@
   "name": "Recollida Porta a Porta WCity",
   "codeowners": ["@QuaKim"],
   "config_flow": true,
-  "documentation": "https://github.com/TU-USUARIO-GITHUB/Recollida-Porta-a-Porta-WCity",
+  "documentation": "https://github.com/QUaKim/Recollida-Porta-a-Porta-WCity",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/TU-USUARIO-GITHUB/Recollida-Porta-a-Porta-WCity/issues",
+  "issue_tracker": "https://github.com/QuaKim/Recollida-Porta-a-Porta-WCity/issues",
   "requirements": [],
   "version": "0.0.5"
 }
