@@ -1,4 +1,4 @@
-DOMAIN = "obrelaporta_wcity_test"
+DOMAIN = ""wcity_pap"
 
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
