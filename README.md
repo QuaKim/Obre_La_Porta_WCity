@@ -8,7 +8,6 @@
 <summary><b><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" width="20" height="14" alt="Català"> Clic per veure la versió en Català</b></summary>
 
 ### Versió en Català
-Integració personalitzada per a **Home Assistant** que connecta amb la plataforma **W-City**...
 
 Integració personalitzada per a **Home Assistant** que connecta amb la plataforma **W-City** per a la gestió del servei de recollida de residus **Porta a Porta (PaP)**.
 
