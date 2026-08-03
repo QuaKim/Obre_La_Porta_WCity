@@ -27,8 +27,12 @@ La integración proporciona las siguientes entidades principales:
 
 1. Abre **Home Assistant** y ve a **HACS** > **Integraciones**.
 2. Haz clic en los tres puntos de la esquina superior derecha `⋮` y selecciona **Repositorios personalizados** (*Custom repositories*).
-3. Añade la URL de este repositorio:
-   ```text
-   [https://github.com/QuaKim/Obre_La_Porta_WCity]
+3. Añade la URL de este repositorio: https://github.com/QuaKim/Obre_La_Porta_WCity
+4. Instalar Obre_La_Porta_WCity
+5. Reinciar Home Assitant
 
-   
+### Paso 2: Añadir como Integración
+
+1. Añadir Obre_La_Porta_WCity desde Configuración > Dispositivos y Servicios
+2. Introducir tus credenciales de acceso. 
+
