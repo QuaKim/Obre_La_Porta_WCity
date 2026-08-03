@@ -55,13 +55,17 @@ La integració proporciona les següents entitats principals:
 5. **Autenticació:** Introdueix les teves credencials d'accés del portal WCity per finalitzar la configuració.
 6. 
 </details>
-
+<details>
+<summary><b><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" width="20" height="14" alt="Català"> Clic para versión en Español</b></summary>
 Integración personalizada para **Home Assistant** que conecta con la plataforma **W-City** para la gestión del servicio de recogida de residuos **Porta a Porta (PaP)**.
 
 > 📍 **Soporte actual:** Inicialmente compatible con la **Mancomunitat Penedès Garraf** (servicio *"Obre la Porta"* - `obrelaporta.wcity.app`). Pensado para ir añadiendo soporte a otros municipios o mancomunidades que utilicen la plataforma W-City.
 
 ---
 
+
+### Versión en Español
+   
 ## 📊 Entidades Generadas
 
 La integración proporciona las siguientes entidades principales:
@@ -100,4 +104,4 @@ La integración proporciona las siguientes entidades principales:
            └── ...
 4. Ve a **Ajustes > Dispositivos y servicios > Añadir integración** y busca **Recollida Porta a Porta WCity**.
 5. **Autenticación:** Introduce tus credenciales de acceso del portal WCity para finalizar la configuración.
-
+</details>
