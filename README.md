@@ -1,4 +1,4 @@
-# W-City - Recogida Porta a Porta (Home Assistant Integration)
+# Recollida Porta a Porta - WCity (Home Assistant Integration)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![GitHub Release](https://img.shields.io/github/v/release/QuaKim/Obre_La_Porta_WCity)](https://github.com/TU-USUARIO/TU-REPOSITORIO/releases)
