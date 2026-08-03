@@ -1,4 +1,6 @@
 {
   "name": "Recollida Porta a Porta - WCity",
   "render_readme": true
+  "country": ["ES"],
+  "homeassistant": "2023.8.0"
 }
