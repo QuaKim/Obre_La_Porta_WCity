@@ -23,6 +23,8 @@ La integración proporciona las siguientes entidades principales:
 
 ### Paso 1: Añadir como Repositorio Personalizado
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=QuaKim&repository=Obre_La_Porta_WCity&category=integration)
+
 1. Abre **Home Assistant** y ve a **HACS** > **Integraciones**.
 2. Haz clic en los tres puntos de la esquina superior derecha `⋮` y selecciona **Repositorios personalizados** (*Custom repositories*).
 3. Añade la URL de este repositorio:
