@@ -53,7 +53,7 @@ La integració proporciona les següents entitats principals:
            └── ...
 4. Ves a **Ajustos > Dispositius i serveis > Afegir integració** i cerca **Recollida Porta a Porta WCity**.
 5. **Autenticació:** Introdueix les teves credencials d'accés del portal WCity per finalitzar la configuració.
-6. 
+   
 </details>
 <details>
 <summary><b><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" width="20" height="14" alt="Català"> Clic para versión en Español</b></summary>
