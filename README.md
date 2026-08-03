@@ -1,13 +1,31 @@
-# 🗑️ Obre la Porta W-City (Mancomunitat Penedès-Garraf) — Home Assistant
+# W-City - Recogida Porta a Porta (Home Assistant Integration)
 
-Integración personalizada (*custom component*) para Home Assistant diseñada para consultar automáticamente el calendario de recogida de residuos puerta a puerta gestionado por la **Mancomunitat Penedès-Garraf** a través de la plataforma W-City.
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+[![GitHub Release](https://img.shields.io/github/v/release/TU-USUARIO/TU-REPOSITORIO)](https://github.com/TU-USUARIO/TU-REPOSITORIO/releases)
+[![License](https://img.shields.io/github/license/TU-USUARIO/TU-REPOSITORIO)](LICENSE)
 
-### 📍 Ámbito de aplicación
-Diseñado específicamente para los municipios adheridos al sistema de recogida puerta a puerta de la **Mancomunitat Penedès-Garraf** (Olèrdola, El Pla del Penedès, La Granada, Sant Pere de Riudebitlles, Sant Quintí de Mediona, Sant Sadurní d'Anoia, Torrelavit) que utilizan el portal web W-City.
+Integración personalizada para **Home Assistant** que conecta con la plataforma **W-City** para la gestión del servicio de recogida de residuos **Porta a Porta (PaP)**.
 
-### ✨ Características principales 
-* **Scraping directo:** Obtención del estado directamente desde la plataforma W-City de la Mancomunitat.
-* **Sensor de estado:** Genera la entidad `sensor.basura_hoy` con la fracción del día (ej. *PAPEL*, *RESTO*, *ORGANICA*).
-* **Frecuencia de actualización:** Cada dia a las 00:30 🕧
-* **Configuración sencilla:** Introducción de credenciales desde el propio menú de Home Assistant (*Config Flow*).
-* **Soporte HACS:** Preparado para instalar como repositorio personalizado.
+> 📍 **Soporte actual:** Inicialmente compatible con la **Mancomunitat Penedès Garraf** (servicio *"Obre la Porta"* - `obrelaporta.wcity.app`). Pensado para ir añadiendo soporte a otros municipios o mancomunidades que utilicen la plataforma W-City.
+
+---
+
+## 📊 Entidades Generadas
+
+La integración proporciona las siguientes entidades principales:
+
+* **Sensor de Recogida del Día:** Indica la fracción de residuo que corresponde sacar en el día de hoy (ej. *Orgànica*, *Envasos*, *Paper i Cartró*, *Resto*, etc.).
+* **Calendario del Mes en Curso (`calendar`):** Muestra la planificación y el desglose completo de todas las recogidas programadas para el **mes en curso**, permitiendo consultar cualquier día del mes actual en tu interfaz o mediante automatizaciones.
+
+---
+
+## 🛠️ Instalación mediante HACS
+
+### Paso 1: Añadir como Repositorio Personalizado
+
+1. Abre **Home Assistant** y ve a **HACS** > **Integraciones**.
+2. Haz clic en los tres puntos de la esquina superior derecha `⋮` y selecciona **Repositorios personalizados** (*Custom repositories*).
+3. Añade la URL de este repositorio:
+   ```text
+   [https://github.com/QuaKim/Obre_La_Porta_WCity]
+   
