@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![GitHub Release](https://img.shields.io/github/v/release/QuaKim/Recollida-Porta-a-Porta-WCity)](https://github.com/QuaKim/Recollida-Porta-a-Porta-WCity/releases)
-[![License](https://img.shields.io/github/license/jQuaKim/Recollida-Porta-a-Porta-WCity)](LICENSE)
+[![License](https://img.shields.io/github/license/QuaKim/Recollida-Porta-a-Porta-WCity)](LICENSE)
 
 <details>
 <summary><b><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" width="20" height="14" alt="Català"> Clic per veure la versió en Català</b></summary>
