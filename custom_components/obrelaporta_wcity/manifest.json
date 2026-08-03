@@ -1,6 +1,6 @@
 {
   "domain": "obrelaporta_wcity",
-  "name": "Obre la Porta W-City",
+  "name": "Recollida Porta a Porta - WCity",
   "codeowners": ["@QuaKim"],
   "config_flow": true,
   "documentation": "https://github.com/tu_usuario/tu_repositorio",
