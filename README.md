@@ -10,8 +10,6 @@
 ### Versió en Català
 Integració personalitzada per a **Home Assistant** que connecta amb la plataforma **W-City**...
 
-# Recollida Porta a Porta - WCity (Home Assistant Integration)
-
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![GitHub Release](https://img.shields.io/github/v/release/jQuaKim/Recollida-Porta-a-Porta-WCity)](https://github.com/jQuaKim/Recollida-Porta-a-Porta-WCity/releases)
 [![License](https://img.shields.io/github/license/jQuaKim/Recollida-Porta-a-Porta-WCity)](LICENSE)
