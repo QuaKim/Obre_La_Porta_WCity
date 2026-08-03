@@ -1,4 +1,4 @@
-DOMAIN = ""wcity_pap"
+DOMAIN = "wcity_pap"
 
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
