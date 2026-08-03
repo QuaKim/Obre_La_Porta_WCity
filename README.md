@@ -10,10 +10,6 @@
 ### Versió en Català
 Integració personalitzada per a **Home Assistant** que connecta amb la plataforma **W-City**...
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-[![GitHub Release](https://img.shields.io/github/v/release/jQuaKim/Recollida-Porta-a-Porta-WCity)](https://github.com/jQuaKim/Recollida-Porta-a-Porta-WCity/releases)
-[![License](https://img.shields.io/github/license/jQuaKim/Recollida-Porta-a-Porta-WCity)](LICENSE)
-
 Integració personalitzada per a **Home Assistant** que connecta amb la plataforma **W-City** per a la gestió del servei de recollida de residus **Porta a Porta (PaP)**.
 
 > 📍 **Suport actual:** Inicialment compatible amb la **Mancomunitat Penedès Garraf** (servei *"Obre la Porta"* - `obrelaporta.wcity.app`). Pensat per anar afegint suport a altres municipis o mancomunitats que utilitzin la plataforma W-City.
